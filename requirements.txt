@@ -3,3 +3,4 @@ pandas
 numpy==1.23.0
 matplotlib==3.6.2
 networkx==3.4.2
+uvicorn

@@ -4,6 +4,7 @@ import sqlite3
 import matplotlib.pyplot as plt
 import os
 from shiny import App, ui, render
+import uvicorn
 import networkx as nx
 
 
@@ -1310,4 +1311,5 @@ def server(input, output, session):
 
 app = App(app_ui, server)
 
-app.run( )
+port = int(os.getenv("PORT", 8000))  # Render assigns the PORT environment variable
+uvicorn.run(app, host="0.0.0.0", port=port)
