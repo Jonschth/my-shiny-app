@@ -294,8 +294,8 @@ def tré(fyrirtæki, dótturfélög,hlutdeild_í_dótturfélögum):
 
 
 #path = "r:/Ráðgjöf/SVN2/Grein í Vísbendingu/gagnaskrár/"
-#dir = "C:/Users\JST\Downloads\Apps\App for MHHI/"
-dir=""
+dir = "C:/Users\JST\Downloads\Apps\App for MHHI/"
+#dir=""
 path = os.path.dirname(__file__)
 
 
