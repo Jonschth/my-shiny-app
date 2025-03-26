@@ -500,9 +500,18 @@ app_ui = ui.page_fluid(
     {"style": "font-weight: bold;"},
     ui.output_plot("trémynd", height = "725px"),
     #style='width = "400px" height = "1600px"'
-        ))
+        )
+    )
+    ui.tags.hr(),  # Horizontal line for separation
+    ui.output_text("status_message", style="font-weight: bold; text-align: center; font-size: 14px; color: blue;")
 
-))
+)
+    
+def server(input, output, session):
+    @output
+    @render.text
+    def status_message():
+        return "Þú ert núverandi kerfi" if nuverandi else "Þú ert í nýju lögunum"    
 
 df_fiskur_global = df_fiskur
 df_beta_global = df_beta
