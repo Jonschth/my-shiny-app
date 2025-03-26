@@ -503,12 +503,12 @@ app_ui = ui.page_fluid(
         )
     ),
     ui.tags.hr(),  # Horizontal line for separation
-    ui.tags.div(
+    
+
+)ui.tags.div(
     ui.output_text("status_message"),
     style="font-weight: bold; text-align: center; font-size: 14px; color: red;"
-),
-
-))
+),)
      
 
 df_fiskur_global = df_fiskur
