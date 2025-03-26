@@ -506,6 +506,7 @@ app_ui = ui.page_fluid(
 ),ui.div(
    {"style": "position: fixed; top: 850px; left: 50px; z-index: 1; padding: 20px; background-color: white; border: 1px solid #ddd; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);"},
     ui.output_text("message"))
+)
 
 df_fiskur_global = df_fiskur
 df_beta_global = df_beta
