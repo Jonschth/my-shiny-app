@@ -547,6 +547,9 @@ def server(input, output, session):
             global gamla
             gamla = 0
         gamla_kerfið = input.Gamla()
+        @render.text
+        def message():
+            return "Nýja kerfið er í notkun." if gamla_kerfið else "Gamla kerfið er í notkun."
         if gamla_kerfið:
            milli = 1
         else: milli = 0
