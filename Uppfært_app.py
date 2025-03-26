@@ -503,11 +503,9 @@ app_ui = ui.page_fluid(
         )
     ),
     ui.tags.hr(),  # Horizontal line for separation
-    ui.tags.div(
-    ui.output_text("status_message"),
-    style="font-weight: bold; text-align: center; font-size: 14px; color: red;"),
+    ui.output_text("status_message", style="font-weight: bold; text-align: center; font-size: 14px; color: blue;")
 
-),)
+))
      
 
 df_fiskur_global = df_fiskur
@@ -644,10 +642,6 @@ def server(input, output, session):
             nuverandi = False
             if gamla_kerfið:
                 nuverandi = True
-            @output
-            @render.text
-            def status_message():
-                return "Þú ert núverandi kerfi" if nuverandi else "Þú ert í nýju lögunum"
             A = []
             df_beta2 = df_beta_global
             if gamla_kerfið:
@@ -766,7 +760,6 @@ def server(input, output, session):
     def Eignatengslin():
        global eignatengsla_texti
        return eignatengsla_texti
-   
 
     @render.table
     def data_table():
@@ -1233,7 +1226,7 @@ def server(input, output, session):
         # Add legend and show the plot
         plt.legend(loc='upper right', framealpha=1, fontsize=10, frameon=True)
         
-
+        
 
         @render.plot
         def plot10():
