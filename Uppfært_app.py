@@ -500,10 +500,10 @@ app_ui = ui.page_fluid(
     {"style": "font-weight: bold;"},
     ui.output_plot("trémynd", height = "725px"),
     #style='width = "400px" height = "1600px"'
-        )),ui.output_text("message")
+        ))
     
 
-))
+),ui.output_text("message"))
 
 df_fiskur_global = df_fiskur
 df_beta_global = df_beta
