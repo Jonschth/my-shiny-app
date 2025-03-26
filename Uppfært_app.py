@@ -925,7 +925,7 @@ def server(input, output, session):
     
         # Adjust x-axis labels (wrap if too long)
         new_labels = [label if len(label) <= 15 else '\n'.join([label[i:i+15] for i in range(0, len(label), 15)]) for label in sameinað.index[start_idx:end_idx]]
-        #plt.xticks(ticks=range(start_idx, end_idx), labels=new_labels, rotation=45, ha='right', fontsize=10, fontname='Arial')
+
         plt.xticks(ticks=range(len(new_labels)), labels=new_labels, rotation=45, ha='right', fontsize=10, fontname='Arial')
     
         # Labels and title
@@ -1024,7 +1024,7 @@ def server(input, output, session):
             label if len(label) <= 15 else '\n'.join([label[i:i+15] for i in range(0, len(label), 15)]) 
             for label in sameinað.index[start_idx:end_idx]
         ]
-        plt.xticks(ticks=range(start_idx, end_idx), labels=new_labels, rotation=45, ha='right', fontsize=10, fontname='Arial')
+        plt.xticks(ticks=range(len(new_labels)), labels=new_labels, rotation=45, ha='right', fontsize=10, fontname='Arial')
     
         # Labels and title
         plt.xlabel('Nánar um útgerðirnar', fontsize=10, fontname='Arial')  # Fixed typo
@@ -1122,7 +1122,7 @@ def server(input, output, session):
             label if len(label) <= 15 else '\n'.join([label[i:i+15] for i in range(0, len(label), 15)]) 
             for label in sameinað.index[start_idx:end_idx]
         ]
-        plt.xticks(ticks=range(start_idx, end_idx), labels=new_labels, rotation=45, ha='right', fontsize=10, fontname='Arial')
+        plt.xticks(ticks=range(len(new_labels)), labels=new_labels, rotation=45, ha='right', fontsize=10, fontname='Arial')
     
         # Labels and title
         plt.xlabel('Nánar um útgerðirnar', fontsize=10, fontname='Arial')
@@ -1255,7 +1255,7 @@ def server(input, output, session):
         
             # Adjust x-axis labels (wrap if too long)
             new_labels = [label if len(label) <= 15 else '\n'.join([label[i:i+15] for i in range(0, len(label), 15)]) for label in sameinað.index[start_idx:end_idx]]
-            plt.xticks(ticks=range(start_idx, end_idx), labels=new_labels, rotation=45, ha='right', fontsize=10, fontname='Arial')
+        plt.xticks(ticks=range(len(new_labels)), labels=new_labels, rotation=45, ha='right', fontsize=10, fontname='Arial')
         
             # Labels and title
             plt.xlabel('Nánar um útgerðirnar', fontsize=10, fontname='Arial')
@@ -1300,7 +1300,7 @@ def server(input, output, session):
         
             # Adjust x-axis labels (wrap if too long)
             new_labels = [label if len(label) <= 15 else '\n'.join([label[i:i+15] for i in range(0, len(label), 15)]) for label in sameinað.index[start_idx:end_idx]]
-            plt.xticks(ticks=range(start_idx, end_idx), labels=new_labels, rotation=45, ha='right', fontsize=10, fontname='Arial')
+        plt.xticks(ticks=range(len(new_labels)), labels=new_labels, rotation=45, ha='right', fontsize=10, fontname='Arial')
         
             # Labels and title
             plt.xlabel('Nánar um útgerðirnar', fontsize=12, fontname='Arial')
