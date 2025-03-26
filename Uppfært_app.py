@@ -103,11 +103,14 @@ def position(ÞÍG_per_fyrirtæki, hlutdeild_fylki, percentage = 20, fisktegund 
   samstæður = list(set(samstæður))
   
   ÞÍG_per_fyrirtæki.rename(index={fyrirtæki: f'{fyrirtæki} samst.' for fyrirtæki in samstæður}, inplace=True)
+  ÞÍG_per_fyrirtæki.rename(index={'Samherji Íslandi ehf. samst': 'Samherji samst.'}, inplace=True)
   if mhhi or best:
     hlutdeild_fylki = hlutdeild_fylki.drop(droppa, axis = 0)
     hlutdeild_fylki = hlutdeild_fylki.drop(droppa, axis = 1)
     hlutdeild_fylki.rename(index={fyrirtæki: f'{fyrirtæki} samst.' for fyrirtæki in samstæður}, inplace=True)
     hlutdeild_fylki.rename(columns={fyrirtæki: f'{fyrirtæki} samst.' for fyrirtæki in samstæður}, inplace=True)
+    hlutdeild_fylki.rename(index={'Samherji Íslandi ehf. samst': 'Samherji samst.'}, inplace=True)
+    hlutdeild_fylki.rename(columns={'Samherji Íslandi ehf. samst': 'Samherji samst.'}, inplace=True)
 
   return ÞÍG_per_fyrirtæki, hlutdeild_fylki
 
@@ -646,7 +649,6 @@ def server(input, output, session):
 
             pd.options.display.max_columns = None
             pd.options.display.max_rows = None
-            # print(df_beta_global[:,'Salting ehf. samst.'])
             for column in df_fiskur_global.columns:
                 s = df_fiskur_global[column].to_frame()
                 if mhhi:
