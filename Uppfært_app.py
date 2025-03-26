@@ -903,9 +903,7 @@ def server(input, output, session):
     
         # Extracting range from `hopur`
         hopur = input.top()  # Ensure `input` is a valid object
-        #start_idx, end_idx = map(int, hopur.split('-'))  # Correct index slicing
-        start_idx = int(hopur[0:2])  # Start index
-        end_idx = int(hopur[3:5])  
+        start_idx, end_idx = map(int, hopur.split('-'))  # Correct index slicing
     
         # Dynamically set y-limit
         plt.ylim(0, 35)
