@@ -500,13 +500,10 @@ app_ui = ui.page_fluid(
     {"style": "font-weight: bold;"},
     ui.output_plot("trémynd", height = "725px"),
     #style='width = "400px" height = "1600px"'
-        )
-    ),
-    ui.tags.hr(),  # Horizontal line for separation
-    ui.output_text("status_message", style="font-weight: bold; text-align: center; font-size: 14px; color: blue;")
+        ))
+    
 
 ))
-     
 
 df_fiskur_global = df_fiskur
 df_beta_global = df_beta
@@ -1225,8 +1222,6 @@ def server(input, output, session):
     
         # Add legend and show the plot
         plt.legend(loc='upper right', framealpha=1, fontsize=10, frameon=True)
-        
-        
 
         @render.plot
         def plot10():
