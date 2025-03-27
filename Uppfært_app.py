@@ -300,6 +300,7 @@ def tré(fyrirtæki, dótturfélög,hlutdeild_í_dótturfélögum):
 #dir = "C:/Users\JST\Downloads\Apps\App for MHHI/"
 dir=""
 path = os.path.dirname(__file__)
+logo_path = os.path.join(path, dir, "arev-black-logo.png") 
 
 
 prenta = True
@@ -379,7 +380,7 @@ for row in df_beta_krókur:
 app_ui = ui.page_fluid(
     
     ui.div(
-        ui.img(src="arev-black-logo.png", height="60px"),  # Adjust height if needed
+        ui.img(src=f"file://{logo_path}", height="60px"),  # Adjust height if needed
         {"style": "position: absolute; top: 10px; right: 10px; z-index: 1000;"}
     ),
 
