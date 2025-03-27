@@ -896,7 +896,7 @@ def server(input, output, session):
             )
     
         # Add horizontal lines for reference
-        plt.axhline(y=0.15*100, color='g', linestyle='-', label='Hámark kauphöll')
+
         plt.axhline(y=0.12*100, color='r', linestyle='--', label='Hámark einkaeign')
     
         # Adjust the Y-axis to make the bars more visible if the values are small
