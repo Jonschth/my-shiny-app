@@ -552,7 +552,7 @@ def server(input, output, session):
         gamla_kerfið = input.Gamla()
         @render.text
         def message():
-            return "Nýja kerfið er í notkun." if gamla_kerfið else "Gamla kerfið er í notkun."
+            return "Nýtt frumvarp í notkun." if gamla_kerfið else "Núverandi lög í notkun"
         if gamla_kerfið:
            milli = 1
         else: milli = 0
