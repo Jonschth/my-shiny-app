@@ -377,6 +377,12 @@ for row in df_beta_krókur:
     df_krókur.loc[row,'Ýsa %'] = 0.0
 
 app_ui = ui.page_fluid(
+    
+    ui.div(
+        ui.img(src="arev-black-logo.png", height="60px"),  # Adjust height if needed
+        {"style": "position: absolute; top: 10px; right: 10px; z-index: 1000;"}
+    ),
+
    
     ui.navset_pill_list(
         ui.nav_panel("Heildarkerfið",
@@ -552,7 +558,7 @@ def server(input, output, session):
         gamla_kerfið = input.Gamla()
         @render.text
         def message():
-            return "Nýtt frumvarp í notkun." if gamla_kerfið else "Núverandi lög í notkun"
+            return "Núverandi lög í notkun" if gamla_kerfið else "Nýtt frumvarp í notkun"
         if gamla_kerfið:
            milli = 1
         else: milli = 0
