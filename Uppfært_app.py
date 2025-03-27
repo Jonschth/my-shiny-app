@@ -377,6 +377,21 @@ for row in df_beta_krókur:
     df_krókur.loc[row,'Ýsa %'] = 0.0
 
 app_ui = ui.page_fluid(
+    
+
+        
+    ui.tags.style("""
+        .logo {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    """),
+    ui.tags.div("AREV", class_="logo"),
+
    
     ui.navset_pill_list(
         ui.nav_panel("Heildarkerfið",
