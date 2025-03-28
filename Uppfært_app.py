@@ -410,13 +410,13 @@ app_ui = ui.page_fluid(
         ),
         ui.tags.hr(),
         
-        ui.div(
-            ui.input_select("select_column", "Eigendur:", choices=list(df_beta_krókur.columns)),
-            ui.input_select("select_row", "Dótturfélag:", choices=list(df_beta_krókur.index)),
-            ui.input_text("new_value", "Eignarhlutur eiganda í dótturfélagi, %:"),
-            ui.input_action_button("submit", "Keyra",class_="btn-success"),
-            style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;"
-        ),
+        #ui.div(
+            #ui.input_select("select_column", "Eigendur:", choices=list(df_beta_krókur.columns)),
+            #ui.input_select("select_row", "Dótturfélag:", choices=list(df_beta_krókur.index)),
+            #ui.input_text("new_value", "Eignarhlutur eiganda í dótturfélagi, %:"),
+            #ui.input_action_button("submit", "Keyra",class_="btn-success"),
+            #style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;"
+        #),
         ui.div(
         ui.output_text_verbatim("error_message"),
              style="color: red; font-weight: bold;"
