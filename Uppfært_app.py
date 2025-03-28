@@ -394,6 +394,39 @@ app_ui = ui.page_fluid(
 
    
     ui.navset_pill_list(
+        ui.nav_panel("Veldu á milli núverandi laga og nýs frumvarps",
+        ui.tags.br(),
+        ui.output_text_verbatim("Breytingarnar", placeholder=False),
+
+        ui.tags.hr(),
+
+        ui.div(
+        ui.input_checkbox("ÚR_KG", "Útgerðarfélag Reykjavíkur og KG Fiskverkun sameinað", value=False),
+        ui.input_checkbox("ÚR_Brim", "Útgerðarfélag Reykjavíkur og Brim sameinað", value=False),
+        ui.input_checkbox("Sam_SVN", "Samherji og Síldarvinnslan sameinað", value=False),
+        ui.input_checkbox("Gamla", "Núverandi kerfi", value=False),
+
+        style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;"
+        ),
+        ui.tags.hr(),
+        
+        ui.div(
+            ui.input_select("select_column", "Eigendur:", choices=list(df_beta_krókur.columns)),
+            ui.input_select("select_row", "Dótturfélag:", choices=list(df_beta_krókur.index)),
+            ui.input_text("new_value", "Eignarhlutur eiganda í dótturfélagi, %:"),
+            ui.input_action_button("submit", "Keyra",class_="btn-success"),
+            style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;"
+        ),
+        ui.div(
+        ui.output_text_verbatim("error_message"),
+             style="color: red; font-weight: bold;"
+        ),
+        ui.tags.hr(),
+
+        ui.output_text("munar","Breytingar gerðar")
+        
+        
+        ),
         ui.nav_panel("Heildarkerfið",
         ui.tags.br(),
         ui.tags.div(
@@ -465,39 +498,7 @@ app_ui = ui.page_fluid(
 
     ui.output_table("data_table", style="margin-top: 20px; border: 1px solid #ddd; padding: 10px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: right;")),
 
-    ui.nav_panel("Veldu á milli núverandi laga og nýs frumvarps",
-    ui.tags.br(),
-    ui.output_text_verbatim("Breytingarnar", placeholder=False),
 
-    ui.tags.hr(),
-
-    ui.div(
-    ui.input_checkbox("ÚR_KG", "Útgerðarfélag Reykjavíkur og KG Fiskverkun sameinað", value=False),
-    ui.input_checkbox("ÚR_Brim", "Útgerðarfélag Reykjavíkur og Brim sameinað", value=False),
-    ui.input_checkbox("Sam_SVN", "Samherji og Síldarvinnslan sameinað", value=False),
-    ui.input_checkbox("Gamla", "Núverandi kerfi", value=False),
-
-    style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;"
-    ),
-    ui.tags.hr(),
-    
-    ui.div(
-        ui.input_select("select_column", "Eigendur:", choices=list(df_beta_krókur.columns)),
-        ui.input_select("select_row", "Dótturfélag:", choices=list(df_beta_krókur.index)),
-        ui.input_text("new_value", "Eignarhlutur eiganda í dótturfélagi, %:"),
-        ui.input_action_button("submit", "Keyra",class_="btn-success"),
-        style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;"
-    ),
-    ui.div(
-    ui.output_text_verbatim("error_message"),
-         style="color: red; font-weight: bold;"
-    ),
-    ui.tags.hr(),
-
-    ui.output_text("munar","Breytingar gerðar")
-    
-    
-    ),
 
     ui.nav_panel("Samþjöppun",
     ui.tags.br(),
