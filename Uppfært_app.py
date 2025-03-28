@@ -465,7 +465,7 @@ app_ui = ui.page_fluid(
 
     ui.output_table("data_table", style="margin-top: 20px; border: 1px solid #ddd; padding: 10px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: right;")),
 
-    ui.nav_panel("Breytingar",
+    ui.nav_panel("Veldu á milli núverandi laga og nýs frumvarps",
     ui.tags.br(),
     ui.output_text_verbatim("Breytingarnar", placeholder=False),
 
