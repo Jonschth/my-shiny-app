@@ -417,16 +417,16 @@ app_ui = ui.page_fluid(
             #ui.input_action_button("submit", "Keyra",class_="btn-success"),
             #style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;"
         #),
-        ui.div(
-        ui.output_text_verbatim("error_message"),
-             style="color: red; font-weight: bold;"
-        ),
-        ui.tags.hr(),
+        #ui.div(
+        #ui.output_text_verbatim("error_message"),
+             #style="color: red; font-weight: bold;"
+        #),
+        #ui.tags.hr(),
 
-        ui.output_text("munar","Breytingar gerðar")
+        #ui.output_text("munar","Breytingar gerðar")
         
         
-        ),
+        #),
         ui.nav_panel("Heildarkerfið",
         ui.tags.br(),
         ui.tags.div(
