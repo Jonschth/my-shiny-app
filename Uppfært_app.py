@@ -404,7 +404,6 @@ app_ui = ui.page_fluid(
         ui.input_checkbox("ÚR_KG", "Útgerðarfélag Reykjavíkur og KG Fiskverkun sameinað", value=False),
         ui.input_checkbox("ÚR_Brim", "Útgerðarfélag Reykjavíkur og Brim sameinað", value=False),
         ui.input_checkbox("Sam_SVN", "Samherji og Síldarvinnslan sameinað", value=False),
-        ui.input_checkbox("Gamla", "Núverandi kerfi", value=False),
 
         style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;"
         ),
