@@ -370,9 +370,6 @@ for row in df_krókur.index:
     dálkur = dálkur.rename(columns={0:row})
     df_beta_krókur = pd.concat([df_beta_krókur, dálkur], axis = 1)
 
-df_beta_krókur.rename(index={'Melnes ehf.': 'Láarif ehf.'}, 
-                     columns={'Melnes ehf.': 'Láarif ehf.'},
-                     inplace=True)
 
 for row in df_beta_krókur:
   if row not in df_krókur.index:
