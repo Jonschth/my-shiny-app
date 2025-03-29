@@ -369,7 +369,7 @@ for row in df_krókur.index:
     dálkur.index = df_beta_krókur.index
     dálkur = dálkur.rename(columns={0:row})
     df_beta_krókur = pd.concat([df_beta_krókur, dálkur], axis = 1)
-
+    
 
 for row in df_beta_krókur:
   if row not in df_krókur.index:
