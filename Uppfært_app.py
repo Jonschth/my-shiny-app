@@ -328,6 +328,7 @@ df_fiskur.drop(df_fiskur.index[~df_fiskur.index.isin(listi)], inplace=True)
 
 
 df_krókur = tengjast(os.path.join(path,dir,'Krókur1.db'))
+df_krókur.loc[df_krókur["Eigandi"] == "Láarif ehf.", "Eigandi"] = "Melnes ehf."
 #df_krókur.drop(df_krókur.index[~df_krókur.index.isin(listi)], inplace=True)
 
 # hér er búin til dictionary fyrir öll félög og dótturfélög þeirra sett í lista
