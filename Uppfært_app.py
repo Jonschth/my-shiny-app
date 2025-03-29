@@ -352,6 +352,10 @@ def bera_saman(df1,df2):
 
 
 df_beta_krókur = df_beta
+df_beta_krókur.rename(
+                     columns={'Melnes ehf.': 'Láarif ehf.'},
+                     inplace=True)
+
 
 global notast
 notast = df_beta.copy()
