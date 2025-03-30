@@ -86,9 +86,9 @@ def position(ÞÍG_per_fyrirtæki, hlutdeild_fylki, percentage = 20, fisktegund 
             droppa.append(index)
             samstæður.append(column)
   if mhhi or nuverandi:
-    hlutdeild_fylki2 = hlutdeild_fylki.applymap(lambda x: 0 if 0 <= x < 0.5 else x)
+    hlutdeild_fylki2 = hlutdeild_fylki.map(lambda x: 0 if 0 <= x < 0.5 else x)
   else:
-    hlutdeild_fylki2 = hlutdeild_fylki.applymap(lambda x: 0 if 0 <= x < 0.2 else x)
+    hlutdeild_fylki2 = hlutdeild_fylki.map(lambda x: 0 if 0 <= x < 0.2 else x)
   hlutdeild_fylki2 = hlutdeild_fylki2 + np.identity(hlutdeild_fylki.shape[0])
 #   if fisktegund == '%-ÞÍG':
 #     print(ÞÍG_per_fyrirtæki)
@@ -297,8 +297,8 @@ def tré(fyrirtæki, dótturfélög,hlutdeild_í_dótturfélögum):
 
 
 #path = "r:/Ráðgjöf/SVN2/Grein í Vísbendingu/gagnaskrár/"
-#dir = "C:/Users\JST\Downloads\Apps\App for MHHI/"
-dir=""
+dir = "C:/Users\JST\Downloads\Apps\App for MHHI/"
+#dir=""
 path = os.path.dirname(__file__)
 
 
@@ -328,6 +328,8 @@ df_fiskur.drop(df_fiskur.index[~df_fiskur.index.isin(listi)], inplace=True)
 
 
 df_krókur = tengjast(os.path.join(path,dir,'Krókur1.db'))
+df_krókur.index = df_krókur.index.map(lambda x: "Melnes ehf." if x == df_krókur.index[19] else x)
+
 
 #df_krókur.drop(df_krókur.index[~df_krókur.index.isin(listi)], inplace=True)
 
@@ -1338,6 +1340,6 @@ def server(input, output, session):
             plt.legend(loc='upper right', framealpha=1, fontsize=10, frameon=True)
 
 app = App(app_ui, server)
-
+#app.run()
 port = int(os.getenv("PORT", 8000))  # Render assigns the PORT environment variable
 uvicorn.run(app, host="0.0.0.0", port=port)
