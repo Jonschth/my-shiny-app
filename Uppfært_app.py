@@ -436,7 +436,7 @@ app_ui = ui.page_fluid(
         ui.tags.br(),
         ui.tags.div(
             ui.output_text_verbatim("Heildarkerfi", placeholder=False),
-            style="font-family: Arial; font-size: 12px;"
+            style="font-family: alef; font-size: 12px;"
         ),
     ui.div(
     ui.input_select("top", "Tíund:", choices=["00-10","11-20","21-30","31-40","41-50","51-60","61-70"]),
@@ -909,12 +909,12 @@ def server(input, output, session):
         plt.ylim(0,18)
     
         new_labels = [label if len(label) <= 15 else '\n'.join([label[i:i+15] for i in range(0, len(label), 15)]) for label in sameinað.index[start_idx:end_idx]]
-        plt.xticks(ticks=range(len(new_labels)), labels=new_labels, rotation=45, ha='right', fontsize=10, fontname='Arial')
+        plt.xticks(ticks=range(len(new_labels)), labels=new_labels, rotation=45, ha='right', fontsize=10, fontname='alef')
     
         # Add labels and title
-        plt.xlabel('Nánar um útgerðirnar', fontsize=10, fontname='Arial')
-        plt.ylabel('Hlutfall ÞÍG %', fontsize=10, fontname='Arial')
-        plt.title('Hlutfall útgerðanna af heildarmarkaðinum', fontsize=12, fontname='Arial', fontweight='bold')
+        plt.xlabel('Nánar um útgerðirnar', fontsize=10, fontname='alef')
+        plt.ylabel('Hlutfall ÞÍG %', fontsize=10, fontname='alef')
+        plt.title('Hlutfall útgerðanna af heildarmarkaðinum', fontsize=12, fontname='alef', fontweight='bold')
     
         # Add legend
         plt.legend(loc='upper right', framealpha=1, fontsize=10, frameon=True)
@@ -955,12 +955,12 @@ def server(input, output, session):
         # Adjust x-axis labels (wrap if too long)
         new_labels = [label if len(label) <= 15 else '\n'.join([label[i:i+15] for i in range(0, len(label), 15)]) for label in sameinað.index[start_idx:end_idx]]
 
-        plt.xticks(ticks=range(len(new_labels)), labels=new_labels, rotation=45, ha='right', fontsize=10, fontname='Arial')
+        plt.xticks(ticks=range(len(new_labels)), labels=new_labels, rotation=45, ha='right', fontsize=10, fontname='alef')
     
         # Labels and title
-        plt.xlabel('Nánar um útgerðirnar', fontsize=10, fontname='Arial')
-        plt.ylabel('Hlutfall Karfi/gullkarfi %', fontsize=10, fontname='Arial')
-        plt.title('Hlutfall útgerðanna af heildarmarkaðinum', fontsize=12, fontname='Arial', fontweight='bold')
+        plt.xlabel('Nánar um útgerðirnar', fontsize=10, fontname='alef')
+        plt.ylabel('Hlutfall Karfi/gullkarfi %', fontsize=10, fontname='alef')
+        plt.title('Hlutfall útgerðanna af heildarmarkaðinum', fontsize=12, fontname='alef', fontweight='bold')
     
         # Add legend
         plt.legend(loc='upper right', framealpha=1, fontsize=10, frameon=True)
@@ -1003,12 +1003,12 @@ def server(input, output, session):
             label if len(label) <= 15 else '\n'.join([label[i:i+15] for i in range(0, len(label), 15)]) 
             for label in sameinað.index[start_idx:end_idx]
         ]
-        plt.xticks(ticks=range(len(new_labels)), labels=new_labels, rotation=45, ha='right', fontsize=10, fontname='Arial')
+        plt.xticks(ticks=range(len(new_labels)), labels=new_labels, rotation=45, ha='right', fontsize=10, fontname='alef')
     
         # Labels and title
-        plt.xlabel('Nánar um útgerðirnar', fontsize=10, fontname='Arial')
-        plt.ylabel('Hlutfall ÞÍG %', fontsize=10, fontname='Arial')
-        plt.title('Hlutfall útgerðanna af heildarmarkaðinum', fontsize=14, fontname='Arial', fontweight='bold')
+        plt.xlabel('Nánar um útgerðirnar', fontsize=10, fontname='alef')
+        plt.ylabel('Hlutfall ÞÍG %', fontsize=10, fontname='alef')
+        plt.title('Hlutfall útgerðanna af heildarmarkaðinum', fontsize=14, fontname='alef', fontweight='bold')
     
         # Add legend
         plt.legend(loc='upper right', framealpha=1, fontsize=10, frameon=True)
@@ -1053,12 +1053,12 @@ def server(input, output, session):
             label if len(label) <= 15 else '\n'.join([label[i:i+15] for i in range(0, len(label), 15)]) 
             for label in sameinað.index[start_idx:end_idx]
         ]
-        plt.xticks(ticks=range(len(new_labels)), labels=new_labels, rotation=45, ha='right', fontsize=10, fontname='Arial')
+        plt.xticks(ticks=range(len(new_labels)), labels=new_labels, rotation=45, ha='right', fontsize=10, fontname='alef')
     
         # Labels and title
-        plt.xlabel('Nánar um útgerðirnar', fontsize=10, fontname='Arial')  # Fixed typo
-        plt.ylabel('Hlutfall Ýsa %', fontsize=10, fontname='Arial')
-        plt.title('Hlutfall útgerðanna af heildarmarkaðinum', fontsize=14, fontname='Arial', fontweight='bold')
+        plt.xlabel('Nánar um útgerðirnar', fontsize=10, fontname='alef')  # Fixed typo
+        plt.ylabel('Hlutfall Ýsa %', fontsize=10, fontname='alef')
+        plt.title('Hlutfall útgerðanna af heildarmarkaðinum', fontsize=14, fontname='alef', fontweight='bold')
     
         # Add legend
         plt.legend(loc='upper right', framealpha=1, fontsize=10, frameon=True)
@@ -1080,10 +1080,10 @@ def server(input, output, session):
 
         plt.axhline(y=0.2*100, color='r', linestyle='--', label=f'Hámark {dálkur}')
 
-        plt.xticks(rotation=45, fontsize=10, fontname='Arial')
-        plt.xlabel('Nánar um útgerðirnar', fontsize=10, fontname='Arial')
-        plt.ylabel('Hlutfall ÞÍG %', fontsize=10, fontname='Arial')
-        plt.title('Hlutfall tíu útgerðanna af heildarmarkaðinum', fontsize=14, fontname='Arial', fontweight='bold')
+        plt.xticks(rotation=45, fontsize=10, fontname='alef')
+        plt.xlabel('Nánar um útgerðirnar', fontsize=10, fontname='alef')
+        plt.ylabel('Hlutfall ÞÍG %', fontsize=10, fontname='alef')
+        plt.title('Hlutfall tíu útgerðanna af heildarmarkaðinum', fontsize=14, fontname='alef', fontweight='bold')
 
 
         plt.legend(loc='upper right', framealpha=1, fontsize=10, frameon=True)
@@ -1105,10 +1105,10 @@ def server(input, output, session):
 
         plt.axhline(y=0.2*100, color='r', linestyle='--', label=f'Hámark {dálkur}')
 
-        plt.xticks(rotation=45, fontsize=10, fontname='Arial')
-        plt.xlabel('Nánar um útgerðirnar', fontsize=10, fontname='Arial')
-        plt.ylabel('Hlutfall ÞÍG %', fontsize=10, fontname='Arial')
-        plt.title('Hlutfall útgerðanna af heildarmarkaðinum', fontsize=14, fontname='Arial', fontweight='bold')
+        plt.xticks(rotation=45, fontsize=10, fontname='alef')
+        plt.xlabel('Nánar um útgerðirnar', fontsize=10, fontname='alef')
+        plt.ylabel('Hlutfall ÞÍG %', fontsize=10, fontname='alef')
+        plt.title('Hlutfall útgerðanna af heildarmarkaðinum', fontsize=14, fontname='alef', fontweight='bold')
 
 
         plt.legend(loc='upper right', framealpha=1, fontsize=10, frameon=True)
@@ -1151,12 +1151,12 @@ def server(input, output, session):
             label if len(label) <= 15 else '\n'.join([label[i:i+15] for i in range(0, len(label), 15)]) 
             for label in sameinað.index[start_idx:end_idx]
         ]
-        plt.xticks(ticks=range(len(new_labels)), labels=new_labels, rotation=45, ha='right', fontsize=10, fontname='Arial')
+        plt.xticks(ticks=range(len(new_labels)), labels=new_labels, rotation=45, ha='right', fontsize=10, fontname='alef')
     
         # Labels and title
-        plt.xlabel('Nánar um útgerðirnar', fontsize=10, fontname='Arial')
-        plt.ylabel('Hlutfall Síld %', fontsize=10, fontname='Arial')
-        plt.title('Hlutfall útgerðanna af heildarmarkaðinum', fontsize=14, fontname='Arial', fontweight='bold')
+        plt.xlabel('Nánar um útgerðirnar', fontsize=10, fontname='alef')
+        plt.ylabel('Hlutfall Síld %', fontsize=10, fontname='alef')
+        plt.title('Hlutfall útgerðanna af heildarmarkaðinum', fontsize=14, fontname='alef', fontweight='bold')
     
         # Add legend
         plt.legend(loc='upper right', framealpha=1, fontsize=10, frameon=True)
@@ -1190,10 +1190,10 @@ def server(input, output, session):
         plt.axhline(y=0.2 * 100, color='r', linestyle='--', label=f'Hámark {dálkur}')
     
         # Customize the ticks, labels, and title
-        plt.xticks(rotation=45, fontsize=10, fontname='Arial')
-        plt.xlabel('Nánar um útgerðirnar', fontsize=10, fontname='Arial')
-        plt.ylabel('Hlutfall ÞÍG %', fontsize=10, fontname='Arial')
-        plt.title('Hlutfall útgerðanna af heildarmarkaðinum', fontsize=14, fontname='Arial', fontweight='bold')
+        plt.xticks(rotation=45, fontsize=10, fontname='alef')
+        plt.xlabel('Nánar um útgerðirnar', fontsize=10, fontname='alef')
+        plt.ylabel('Hlutfall ÞÍG %', fontsize=10, fontname='alef')
+        plt.title('Hlutfall útgerðanna af heildarmarkaðinum', fontsize=14, fontname='alef', fontweight='bold')
     
         # Display the plot
         plt.legend()
@@ -1239,12 +1239,12 @@ def server(input, output, session):
         
         # Wrap xticks labels if they are too long
         new_labels = [label if len(label) <= 15 else '\n'.join([label[i:i+15] for i in range(0, len(label), 15)]) for label in sameinað.index[start_idx:end_idx]]
-        plt.xticks(ticks=range(len(new_labels)), labels=new_labels, rotation=45, ha='right', fontsize=10, fontname='Arial')
+        plt.xticks(ticks=range(len(new_labels)), labels=new_labels, rotation=45, ha='right', fontsize=10, fontname='alef')
     
         # Customize the labels and title
-        plt.xlabel('Nánar um útgerðirnar', fontsize=10, fontname='Arial')
-        plt.ylabel('Hlutfall ÞÍG %', fontsize=10, fontname='Arial')
-        plt.title('Hlutfall útgerðanna af heildarmarkaðinum', fontsize=10, fontname='Arial', fontweight='bold')
+        plt.xlabel('Nánar um útgerðirnar', fontsize=10, fontname='alef')
+        plt.ylabel('Hlutfall ÞÍG %', fontsize=10, fontname='alef')
+        plt.title('Hlutfall útgerðanna af heildarmarkaðinum', fontsize=10, fontname='alef', fontweight='bold')
     
         # Add legend and show the plot
         plt.legend(loc='upper right', framealpha=1, fontsize=10, frameon=True)
@@ -1284,12 +1284,12 @@ def server(input, output, session):
         
             # Adjust x-axis labels (wrap if too long)
             new_labels = [label if len(label) <= 15 else '\n'.join([label[i:i+15] for i in range(0, len(label), 15)]) for label in sameinað.index[start_idx:end_idx]]
-            plt.xticks(ticks=range(len(new_labels)), labels=new_labels, rotation=45, ha='right', fontsize=10, fontname='Arial')
+            plt.xticks(ticks=range(len(new_labels)), labels=new_labels, rotation=45, ha='right', fontsize=10, fontname='alef')
         
             # Labels and title
-            plt.xlabel('Nánar um útgerðirnar', fontsize=10, fontname='Arial')
-            plt.ylabel('Hlutfall Þorskur %', fontsize=10, fontname='Arial')
-            plt.title('Hlutfall útgerðanna af heildarmarkaðinum', fontsize=10, fontname='Arial', fontweight='bold')
+            plt.xlabel('Nánar um útgerðirnar', fontsize=10, fontname='alef')
+            plt.ylabel('Hlutfall Þorskur %', fontsize=10, fontname='alef')
+            plt.title('Hlutfall útgerðanna af heildarmarkaðinum', fontsize=10, fontname='alef', fontweight='bold')
         
             # Add legend
             plt.legend(loc='upper right', framealpha=1, fontsize=10, frameon=True)
@@ -1329,12 +1329,12 @@ def server(input, output, session):
         
             # Adjust x-axis labels (wrap if too long)
             new_labels = [label if len(label) <= 15 else '\n'.join([label[i:i+15] for i in range(0, len(label), 15)]) for label in sameinað.index[start_idx:end_idx]]
-            plt.xticks(ticks=range(len(new_labels)), labels=new_labels, rotation=45, ha='right', fontsize=10, fontname='Arial')
+            plt.xticks(ticks=range(len(new_labels)), labels=new_labels, rotation=45, ha='right', fontsize=10, fontname='alef')
         
             # Labels and title
-            plt.xlabel('Nánar um útgerðirnar', fontsize=12, fontname='Arial')
-            plt.ylabel('Hlutfall Ýsa %', fontsize=12, fontname='Arial')
-            plt.title('Hlutfall útgerðanna af heildarmarkaðinum', fontsize=14, fontname='Arial', fontweight='bold')
+            plt.xlabel('Nánar um útgerðirnar', fontsize=12, fontname='alef')
+            plt.ylabel('Hlutfall Ýsa %', fontsize=12, fontname='alef')
+            plt.title('Hlutfall útgerðanna af heildarmarkaðinum', fontsize=14, fontname='alef', fontweight='bold')
         
             # Add legend
             plt.legend(loc='upper right', framealpha=1, fontsize=10, frameon=True)
