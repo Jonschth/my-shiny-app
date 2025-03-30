@@ -86,9 +86,9 @@ def position(ÞÍG_per_fyrirtæki, hlutdeild_fylki, percentage = 20, fisktegund 
             droppa.append(index)
             samstæður.append(column)
   if mhhi or nuverandi:
-    hlutdeild_fylki2 = hlutdeild_fylki.map(lambda x: 0 if 0 <= x < 0.5 else x)
+    hlutdeild_fylki2 = hlutdeild_fylki.applymap(lambda x: 0 if 0 <= x < 0.5 else x)
   else:
-    hlutdeild_fylki2 = hlutdeild_fylki.map(lambda x: 0 if 0 <= x < 0.2 else x)
+    hlutdeild_fylki2 = hlutdeild_fylki.applymap(lambda x: 0 if 0 <= x < 0.2 else x)
   hlutdeild_fylki2 = hlutdeild_fylki2 + np.identity(hlutdeild_fylki.shape[0])
 #   if fisktegund == '%-ÞÍG':
 #     print(ÞÍG_per_fyrirtæki)
