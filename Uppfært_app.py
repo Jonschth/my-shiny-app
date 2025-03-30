@@ -794,7 +794,7 @@ def server(input, output, session):
 
        df_beta_krókur = df_beta_krókur.loc[(df_beta_krókur != 0).any(axis=1)]
 
-       df_beta_krókur = df_beta_krókur.mul(100).round(2)
+       df_beta_krókur = df_beta_krókur.round(2)
 
        return df_beta_krókur.mul(100).reset_index().rename(columns={'index': 'Fyrirtæki'})
 
