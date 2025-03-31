@@ -733,10 +733,11 @@ def server(input, output, session):
     @render.table
     def HHI_gildi():
         df_fiskur,df_beta,_,_ = gogn(input, mhhi = True)
-        hhi = calculate_hhi(df_fiskur.mul(1/100)).round(0)
-        mhhi = calculate_mhhi(df_fiskur.mul(1/100), df_beta).round(0)
-        cr3 = crn(3, df_fiskur).round(0)
-        cr8 = crn(8, df_fiskur).round(0)
+        hhi = calculate_hhi(df_fiskur.mul(1/100)).round(0).astype(int)
+        mhhi = calculate_mhhi(df_fiskur.mul(1/100), df_beta)
+        mhhi.iloc[:, 1:] = mhhi.iloc[:, 1:].apply(pd.to_numeric, errors='coerce').fillna(0).round(0).astype(int)
+        cr3 = crn(3, df_fiskur).round(0).astype(int)
+        cr8 = crn(8, df_fiskur).round(0).astype(int)
         c3 = pd.DataFrame(cr3)
         c8 = pd.DataFrame(cr8)
         pandas_utgafa = pd.DataFrame(hhi)
