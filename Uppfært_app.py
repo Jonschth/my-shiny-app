@@ -15,8 +15,8 @@ breytingar_texti = "Hér er unnt að velja samsetningu af nokkrum tilvikum. Auk 
 samthoppun_texti = "Í töflunni hér að neðan eru reiknaðir helstu samþjöppunarstuðlar miðað við þau tilvik sem verið er að skoða hverju sinni"
 eignatengsla_texti = "Hér birtast örvarit sem sýna tengsl á milli fyrirtækja innan samstæða miðað við þau tilvik sem hafa verið valin"
 
-#import nest_asyncio #breyting 1
-#nest_asyncio.apply() # breyting 2
+import nest_asyncio #breyting 1
+nest_asyncio.apply() # breyting 2
 
 def tengjast(gagnasafn):
   '''
@@ -298,7 +298,7 @@ def tré(fyrirtæki, dótturfélög,hlutdeild_í_dótturfélögum):
 
 #path = "r:/Ráðgjöf/SVN2/Grein í Vísbendingu/gagnaskrár/"
 #dir = "C:/Users\JST\Downloads\Apps\App for MHHI/"
-dir=""
+#dir=""
 path = os.path.dirname(__file__)
 
 
@@ -314,7 +314,8 @@ df_fiskur.set_index("index", inplace=True)
 
 #df_fiskur = df_fiskur[~df_fiskur.index.duplicated(keep='first')]
 
-df_beta = tengjast(os.path.join(path,dir, 'beta.db'))
+df_beta = tengjast(os.path.join(path,dir, 'beta_test.db'))
+df_beta.set_index("Eigandi", inplace=True)
 #df_beta.rename(columns={'Vísir ehf.':'Vísir hf.'},inplace=True) #22_23
 #df_beta.rename(index={'Vísir ehf.':'Vísir hf.'},inplace=True) #22_23
 
@@ -439,7 +440,7 @@ app_ui = ui.page_fluid(
             style="font-family: alef; font-size: 12px;"
         ),
     ui.div(
-    ui.input_select("top", "Tíund:", choices=["00-10","11-20","21-30","31-40","41-50","51-60","61-70"]),
+    ui.input_select("top", "Tíund:", choices=["00-10","10-20","20-30","30-40","40-50","50-60","60-70"]),
     style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;"
     ),
 
@@ -481,7 +482,7 @@ app_ui = ui.page_fluid(
     ui.tags.br(),
     ui.output_text_verbatim("Krokaflskerfi", placeholder=False),
     ui.div(
-    ui.input_select("top_krokur", "Tíund:", choices=["00-10","11-20","21-30","31-40","41-50","51-60","61-70"]),
+    ui.input_select("top_krokur", "Tíund:", choices=["00-10","10-20","20-30","30-40","40-50","50-60","60-70"]),
     style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;"
     ),
     ui.navset_card_tab(
@@ -1346,3 +1347,4 @@ app = App(app_ui, server)
 #app.run()
 port = int(os.getenv("PORT", 8000))  # Render assigns the PORT environment variable
 uvicorn.run(app, host="0.0.0.0", port=port)
+
