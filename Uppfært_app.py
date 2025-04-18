@@ -15,8 +15,8 @@ breytingar_texti = "Hér er unnt að velja samsetningu af nokkrum tilvikum. Auk 
 samthoppun_texti = "Í töflunni hér að neðan eru reiknaðir helstu samþjöppunarstuðlar miðað við þau tilvik sem verið er að skoða hverju sinni"
 eignatengsla_texti = "Hér birtast örvarit sem sýna tengsl á milli fyrirtækja innan samstæða miðað við þau tilvik sem hafa verið valin"
 
-import nest_asyncio #breyting 1
-nest_asyncio.apply() # breyting 2
+#import nest_asyncio #breyting 1
+#nest_asyncio.apply() # breyting 2
 
 def tengjast(gagnasafn):
   '''
